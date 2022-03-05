@@ -22,7 +22,7 @@ export const createPoem = (body) => {
     data: {
       poem: {
         title: body.title,
-        genre: body.genre,
+        writer: body.writer,
         owner: body.owner,
         description: body.description
       }

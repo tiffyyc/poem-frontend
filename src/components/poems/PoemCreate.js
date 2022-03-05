@@ -26,33 +26,23 @@ const PoemCreate = () => {
 
   return (
     <div>
-      <img src={movie.image} />
       <form onSubmit={handleSubmit}>
-        <button>Create Movie</button>
+        <button>Create Poem</button>
         <label>
           Title:
           <input
             type='text'
             name='title'
-            value={movie.title}
+            value={poem.title}
             onChange={handleChange}
           />
         </label>
         <label>
-          Image:
+          Writer:
           <input
             type='text'
-            name='image'
-            value={movie.image}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Genre:
-          <input
-            type='text'
-            name='genre'
-            value={movie.genre}
+            name='writer'
+            value={poem.writer}
             onChange={handleChange}
           />
         </label>
@@ -62,7 +52,7 @@ const PoemCreate = () => {
           <input
             type='textarea'
             name='description'
-            value={movie.description}
+            value={poem.description}
             onChange={handleChange}
           />
         </label>

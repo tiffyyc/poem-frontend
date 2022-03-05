@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+
 import { getPoems } from '../../api/poems'
 
-const Poems = ({ user }) => {
+const Poems = () => {
   const [poems, setPoems] = useState([])
+  console.log(poems)
 
   useEffect(() => {
     getPoems()
@@ -12,10 +14,11 @@ const Poems = ({ user }) => {
   }, [])
 
   return (
-    <main>
+    <div style={{ padding: '4rem'}}>
       <h4>Poem of the day</h4>
-      {poems}
-    </main>
+      {/* <Poem poems={poems}/> */}
+
+    </div>
   )
 }
 

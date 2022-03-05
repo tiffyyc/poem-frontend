@@ -1,0 +1,14 @@
+.navbar {
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(17, 17, 17, 0.884);
+  padding-left: 5%;
+  height: 3rem;
+}
+
+.menu {
+  justify-content: end;
+  align-items: flex-end;
+  display: flex;
+  padding-right: 5%;
+}

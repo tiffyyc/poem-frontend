@@ -19,7 +19,7 @@ const Poem = ({ user }) => {
   return (
     // <div className={styles.display}>
     <>
-      {poem}
+      <Poem poem={poem}/>
       <MessageBoard user={user}/>
     </>
     // </div>

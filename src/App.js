@@ -11,6 +11,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Poem from './components/poems/Poem'
 import Poems from './components/poems/Poems'
+import PoemCreate from './components/poems/PoemCreate'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -60,7 +61,10 @@ const App = () => {
               path='/'
               element={<Poems />}
             />
-          
+          <Route
+            path='/poem-create'
+            element={<PoemCreate/>}
+            />
 
         </Routes>
       </main>

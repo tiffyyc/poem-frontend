@@ -9,6 +9,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import Poem from './components/poems/Poem'
+import Poems from './components/poems/Poems'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -51,6 +53,14 @@ const App = () => {
             path='/change-password'
             element={<ChangePassword msgAlert={msgAlert} user={user} /> }
           />
+          <Route
+              path='/poem/:id'
+              element={<Poem user={user} />}/>
+          <Route
+              path='/'
+              element={<Poems />}
+            />
+          
 
         </Routes>
       </main>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import MessageBoard from './MessageBoard'
-// import styles from '../styles/Movie.module.css'
 
-import { getPoem } from '../../api/poems'
+import { deletePoem, getPoem } from '../../api/poems'
 
 const Poem = ({ user }) => {
   const { id } = useParams()
@@ -18,11 +17,14 @@ const Poem = ({ user }) => {
 
   return (
     // <div className={styles.display}>
-    <>
-      <Poem poem={poem}/>
+    <div style={{ padding: '4rem'}}>
+      <h4>{poem.title}</h4>
+      <p>writer: {poem.writer}</p>
+      <button onClick={deletePoem}>Delete</button>
+
       <MessageBoard user={user}/>
-    </>
-    // </div>
+    {/* </> */}
+    </div>
   )
 }
 

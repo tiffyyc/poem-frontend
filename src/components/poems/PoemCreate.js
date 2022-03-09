@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { createPoem } from '../../api/poems'
 import { Navigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
-const PoemCreate = () => {
+const PoemCreate = ({user}) => {
   const [poem, setPoem] = useState({})
   const [created, setCreated] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    createPoem(poem)
+    createPoem(poem, user)
       .then(() => {
         setCreated(true)
       })
@@ -21,14 +22,14 @@ const PoemCreate = () => {
   }
 
   if (created) {
-    return <Navigate to='/poem-create' />
+    return <Navigate to='/' />
   }
 
   return (
-    <div>
+    <div style={{ padding: '4rem'}}>
       <form onSubmit={handleSubmit}>
-        <button>Create Poem</button>
-        <label>
+       
+        <label style={{ marginBottom: '1rem' }}>
           Title:
           <input
             type='text'
@@ -37,7 +38,8 @@ const PoemCreate = () => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <br/>
+        <label style={{ marginBottom: '1rem' }}>
           Writer:
           <input
             type='text'
@@ -46,8 +48,8 @@ const PoemCreate = () => {
             onChange={handleChange}
           />
         </label>
-    
-        <label>
+        <br/>
+        <label style={{ marginBottom: '1rem' }}>
           Description:
           <input
             type='textarea'
@@ -56,6 +58,9 @@ const PoemCreate = () => {
             onChange={handleChange}
           />
         </label>
+        <br/>
+        <Button variant="dark" type="submit" value="Submit">Create Poem</Button>
+         {/* <button>Create Poem</button> */}
       </form>
     </div>
   )

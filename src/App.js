@@ -55,15 +55,15 @@ const App = () => {
             element={<ChangePassword msgAlert={msgAlert} user={user} /> }
           />
           <Route
-              path='/poem/:id'
+              path='/poems/:id'
               element={<Poem user={user} />}/>
           <Route
               path='/'
-              element={<Poems />}
+              element={<Poems user={user}/>}
             />
           <Route
             path='/poem-create'
-            element={<PoemCreate/>}
+            element={<PoemCreate user={user}/>}
             />
 
         </Routes>

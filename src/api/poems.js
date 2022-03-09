@@ -1,34 +1,51 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const getPoems = (genre) => {
-  return axios({
-    url: apiUrl + `/poems/?genre=${genre}`,
-    method: 'GET'
-  })
+export const getPoems = (user) => {
+   return axios.get(apiUrl + '/poems',
+    // {
+    //   headers: {
+    //     Authorization: `Bearer ${user.token}`
+    //   }
+    // }
+  )
 }
+
 export const getPoem = (id) => {
-  return axios({
-    url: apiUrl + `/poems/${id}`,
-    method: 'GET'
+   return axios.get(`${apiUrl}/poems/${id}`, {
+    // headers: {
+    //   Authorization: `Bearer ${user.token}`
+    // }
   })
 }
 
-export const createPoem = (body) => {
-  console.log(body)
-  return axios({
-    url: apiUrl + '/poems/',
-    method: 'POST',
-    data: {
-      poem: {
-        title: body.title,
-        writer: body.writer,
-        owner: body.owner,
-        description: body.description
+export const createPoem = (poem, user) => {
+  return axios.post(
+    `${apiUrl}/poems`,
+    { poem: { ...poem } },
+    {
+      headers: {
+        Authorization: `Bearer ${user.token}`
       }
     }
-  })
+  )
 }
+// export const createPoem = (body, user) => {
+//   console.log(body)
+//   return axios({
+//     url: apiUrl + '/poems',
+//     method: 'POST',
+//     data: {
+//       poem: {
+//         title: body.title,
+//         writer: body.writer,
+//         description: body.description
+//           }
+//         },
+//     headers: { Authorization: `Bearer ${user.token}` }
+    
+//   })
+// }
 
 export const deletePoem = (id) => {
   return axios({

@@ -15,7 +15,6 @@ const MessageBoard = ({ user }) => {
     getMessages(id)
       .then(res => {
         setMessages(res.data.messages.reverse().slice(0, numMessages))
-        console.log(setNumMessages)
       })
       .catch(console.error)
   }, [])
@@ -51,11 +50,11 @@ const MessageBoard = ({ user }) => {
     setNewMessage(e.target.value)
   }
 
-  // const onNumMessageChange = (e) => {
-  //   e.preventDefault()
+  const onNumMessageChange = (e) => {
+    e.preventDefault()
 
-  //   setNumMessages(e.target.value)
-  // }
+    setNumMessages(e.target.value)
+  }
 
   return (
     <div style={{
@@ -71,22 +70,22 @@ const MessageBoard = ({ user }) => {
         margin: '0 10%',
         padding: '2%'
       }}>
-        <div style={{ width: '30%' }}>
+        <div >
           {/* for spacing */}
         </div>
         <h4 style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          width: '30%'
+          
         }}>Comments</h4>
         <div style={{
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'flex-end',
           alignItems: 'right',
-          marginRight: '10%',
-          width: '30%'
+          marginRight: '10%'
+          
         }}>
           {/* <p style={{ margin: 'auto 0.5rem auto 1rem' }}> Messages Displayed: </p>
           <input value={numMessages} onChange={onNumMessageChange} style={{ width: '3rem', textAlign: 'center' }}></input>
@@ -102,13 +101,13 @@ const MessageBoard = ({ user }) => {
       }}>
         <p style={{
           margin: 'auto 0.5rem auto 1rem'
-        }}>New comment: </p>
+        }}>New message: </p>
         <input style={{
-          width: '80%',
+          width: '50%',
           height: '3rem'
         }}
         value={newMessage} onChange={onMessageChange}></input>
-        <Button variant='dark' style={{ margin: '1rem' }}>Submit</Button>
+        <Button variant="secondary" onClick={onSubmit} style={{ margin:'1rem' }}>Submit</Button>
       </form>}
 
       {messages.map(message => {

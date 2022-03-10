@@ -37,7 +37,7 @@ const SignIn = ({ msgAlert, setUser }) => {
   }
 
   if (shouldNavigate) {
-    return <Navigate to='/' />
+    return <Navigate to='/poems' />
   }
 
   return (

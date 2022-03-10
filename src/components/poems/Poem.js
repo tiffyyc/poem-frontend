@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 
 import { deletePoem, getPoem } from '../../api/poems'
 
-const Poem = ({ user, refresh }) => {
+const Poem = ({ user }) => {
   const { id } = useParams()
   const [poem, setPoem] = useState({})
   const [deleted, setDeleted] = useState(false)
@@ -19,7 +19,7 @@ const Poem = ({ user, refresh }) => {
 
     const handleDeleteClick = async () => {
     try {
-      await deletePoem(id, user)
+      await deletePoem(poem._id, user)
       setDeleted(true)
     } catch (error)
     {

@@ -58,7 +58,7 @@ const App = () => {
               path='/poems/:id'
               element={<Poem user={user} />}/>
           <Route
-              path='/'
+              path='/poems'
               element={<Poems user={user}/>}
             />
           <Route

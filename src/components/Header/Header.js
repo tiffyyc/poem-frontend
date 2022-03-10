@@ -41,7 +41,7 @@ const Header = ({ user }) => (
   <Navbar className={ styles.navbar } expand='md'>
     <Container>
       <Navbar.Brand>
-        <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>Poem of the day</Link>
+        <Link to='/poems' style={{ color: '#FFF', textDecoration: 'none' }}>Poem of the day</Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'className={styles.menu}>

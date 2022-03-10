@@ -22,7 +22,7 @@ const PoemCreate = ({user}) => {
   }
 
   if (created) {
-    return <Navigate to='/' />
+    return <Navigate to='/poems' />
   }
 
   return (

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/poem-frontend/static/css/main.3ebfaed2.chunk.css",
+    "main.js": "/poem-frontend/static/js/main.61f4caae.chunk.js",
+    "main.js.map": "/poem-frontend/static/js/main.61f4caae.chunk.js.map",
+    "runtime-main.js": "/poem-frontend/static/js/runtime-main.bd537dfb.js",
+    "runtime-main.js.map": "/poem-frontend/static/js/runtime-main.bd537dfb.js.map",
+    "static/js/2.83ccbbaf.chunk.js": "/poem-frontend/static/js/2.83ccbbaf.chunk.js",
+    "static/js/2.83ccbbaf.chunk.js.map": "/poem-frontend/static/js/2.83ccbbaf.chunk.js.map",
+    "index.html": "/poem-frontend/index.html",
+    "static/css/main.3ebfaed2.chunk.css.map": "/poem-frontend/static/css/main.3ebfaed2.chunk.css.map",
+    "static/js/2.83ccbbaf.chunk.js.LICENSE.txt": "/poem-frontend/static/js/2.83ccbbaf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd537dfb.js",
+    "static/js/2.83ccbbaf.chunk.js",
+    "static/css/main.3ebfaed2.chunk.css",
+    "static/js/main.61f4caae.chunk.js"
+  ]
+}

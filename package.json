@@ -1,6 +1,6 @@
 {
-  "homepage": "https://github.com/tiffyyc/poem-frontend",
-  "name": "poem",
+  "homepage": "https://tiffyyc.github.io/poem-frontend",
+  "name": "poem-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

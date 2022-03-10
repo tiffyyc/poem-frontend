@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { createMessage, getMessages } from '../../api/messages'
 import Message from './Message'
+import { Button } from 'react-bootstrap'
 
 const MessageBoard = ({ user }) => {
   const [messages, setMessages] = useState([])
@@ -14,6 +15,7 @@ const MessageBoard = ({ user }) => {
     getMessages(id)
       .then(res => {
         setMessages(res.data.messages.reverse().slice(0, numMessages))
+        console.log(setNumMessages)
       })
       .catch(console.error)
   }, [])
@@ -49,11 +51,11 @@ const MessageBoard = ({ user }) => {
     setNewMessage(e.target.value)
   }
 
-  const onNumMessageChange = (e) => {
-    e.preventDefault()
+  // const onNumMessageChange = (e) => {
+  //   e.preventDefault()
 
-    setNumMessages(e.target.value)
-  }
+  //   setNumMessages(e.target.value)
+  // }
 
   return (
     <div style={{
@@ -77,7 +79,7 @@ const MessageBoard = ({ user }) => {
           alignItems: 'center',
           justifyContent: 'center',
           width: '30%'
-        }}>Message Board</h4>
+        }}>Comments</h4>
         <div style={{
           display: 'flex',
           flexDirection: 'row',
@@ -86,9 +88,9 @@ const MessageBoard = ({ user }) => {
           marginRight: '10%',
           width: '30%'
         }}>
-          <p style={{ margin: 'auto 0.5rem auto 1rem' }}> Messages Displayed: </p>
+          {/* <p style={{ margin: 'auto 0.5rem auto 1rem' }}> Messages Displayed: </p>
           <input value={numMessages} onChange={onNumMessageChange} style={{ width: '3rem', textAlign: 'center' }}></input>
-          <button onClick={onRefresh}>Refresh</button>
+          <button onClick={onRefresh}>Refresh</button> */}
         </div>
       </div>
       {user && <form onSubmit={onSubmit} style={{
@@ -100,13 +102,13 @@ const MessageBoard = ({ user }) => {
       }}>
         <p style={{
           margin: 'auto 0.5rem auto 1rem'
-        }}>New message: </p>
+        }}>New comment: </p>
         <input style={{
-          width: '50%',
+          width: '80%',
           height: '3rem'
         }}
         value={newMessage} onChange={onMessageChange}></input>
-        <button>Submit</button>
+        <Button variant='dark' style={{ margin: '1rem' }}>Submit</Button>
       </form>}
 
       {messages.map(message => {

@@ -48,9 +48,10 @@ export const createPoem = (poem, user) => {
 // }
 
 export const deletePoem = (id) => {
-  return axios({
-    url: apiUrl + `/poems/${id}`,
-    method: 'DELETE'
+  return axios.delete(`${apiUrl}/poems/${id}`, {
+    // headers: {
+    //   Authorization: `Bearer ${user.token}`
+    // }
   })
 }
 

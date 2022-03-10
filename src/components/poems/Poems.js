@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 import { getPoems } from '../../api/poems'
 
-const Poems = ({user}) => {
+const Poems = () => {
   const [poems, setPoems] = useState([])
 
   useEffect(() => {
-    getPoems(user)
+    getPoems()
       .then(res => {
         setPoems(res.data.poems)
         console.log(res.data)
@@ -17,12 +17,12 @@ const Poems = ({user}) => {
 
 const renderedPoems = poems.map(poem => {
   return (
-      <li key={poem._id}>
+      <div key={poem._id}>
         <Link to={`/poems/${poem._id}`}>
           <h5>{poem.title}</h5>
         </Link>
         <p>Writer: {poem.writer}</p>
-      </li>
+      </div>
 )}
 )
 
@@ -30,9 +30,9 @@ const renderedPoems = poems.map(poem => {
     <div style={{ padding: '4rem'}}>
       <h4>Poem of the day</h4>
       <p>list of poems</p>
-      <ul>
+      
         {renderedPoems}
-      </ul>
+      
     </div>
   )
 }

@@ -39,12 +39,12 @@ const SignUp = ({ msgAlert, setUser }) => {
   }
 
   if (shouldNavigate) {
-    return <Navigate to='/' />
+    return <Navigate to='/poems' />
   }
 
   return (
     <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='col-sm-10 col-md-8 mx-auto mt-5' style={{ padding: '4rem'}}>
         <h3>Sign Up</h3>
         <Form onSubmit={onSignUp}>
           <Form.Group controlId='email'>
@@ -80,7 +80,7 @@ const SignUp = ({ msgAlert, setUser }) => {
               onChange={event => setPasswordConfirmation(event.target.value)}
             />
           </Form.Group>
-          <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
+          <Button className='mt-2' variant='secondary' type='submit'>Submit</Button>
         </Form>
       </div>
     </div>

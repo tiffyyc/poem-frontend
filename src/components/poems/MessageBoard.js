@@ -74,9 +74,9 @@ const MessageBoard = ({ user }) => {
           {/* for spacing */}
         </div>
         <h4 style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          // display: 'flex',
+          // alignItems: 'center',
+          // justifyContent: 'center',
           
         }}>Comments</h4>
         <div style={{
@@ -99,14 +99,17 @@ const MessageBoard = ({ user }) => {
         paddingTop: '1rem',
         margin: '0 10%'
       }}>
-        <p style={{
+        {/* <p style={{
           margin: 'auto 0.5rem auto 1rem'
-        }}>New message: </p>
+        }}>New message: </p> */}
         <input style={{
           width: '50%',
           height: '3rem'
         }}
         value={newMessage} onChange={onMessageChange}></input>
+
+        <br/>
+        
         <Button variant="secondary" onClick={onSubmit} style={{ margin:'1rem' }}>Submit</Button>
       </form>}
 

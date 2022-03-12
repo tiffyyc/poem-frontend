@@ -40,7 +40,7 @@ const ChangePassword = ({ msgAlert, user }) => {
 
   return (
     <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='col-sm-10 col-md-8 mx-auto mt-5' style={{ padding: '4rem'}}>
         <h3>Change Password</h3>
         <Form onSubmit={onChangePassword}>
           <Form.Group controlId='oldPassword'>
@@ -66,7 +66,7 @@ const ChangePassword = ({ msgAlert, user }) => {
               }
             />
           </Form.Group>
-          <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
+          <Button className='mt-2' variant='secondary' type='submit'>Submit</Button>
         </Form>
       </div>
     </div>

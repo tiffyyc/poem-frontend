@@ -39,7 +39,7 @@ const Message = ({ message, user, refresh }) => {
   return (
     <div style={{
       display: 'flex',
-      borderBottom: 'solid',
+      // borderBottom: 'solid',
       paddingTop: '1rem',
       marginLeft: '10%',
       width: '80%'
